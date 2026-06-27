@@ -1,0 +1,180 @@
+/* Cart drawer — uses the same CSS variables defined in style.css */
+.cart-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(26, 23, 20, 0.45);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+    z-index: 1040;
+}
+.cart-overlay.open {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.cart-drawer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: min(400px, 92vw);
+    background: var(--cream, #F5F0E8);
+    box-shadow: -8px 0 30px rgba(0, 0, 0, 0.15);
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    z-index: 1050;
+    display: flex;
+    flex-direction: column;
+}
+.cart-drawer.open {
+    transform: translateX(0);
+}
+
+.cart-drawer-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.4rem 1.6rem;
+    border-bottom: 1px solid rgba(26, 23, 20, 0.08);
+}
+.cart-drawer-head h5 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin: 0;
+}
+.cart-close {
+    background: none;
+    border: none;
+    font-size: 1.1rem;
+    cursor: pointer;
+    color: var(--ink, #1A1714);
+}
+
+.cart-items {
+    flex: 1;
+    overflow-y: auto;
+    padding: 1rem 1.6rem;
+}
+.cart-empty {
+    color: var(--warm-mid, #8a7f73);
+    font-size: 0.88rem;
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.cart-line {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.9rem 0;
+    border-bottom: 1px solid rgba(26, 23, 20, 0.06);
+}
+.cart-line-info {
+    flex: 1;
+}
+.cart-line-name {
+    font-size: 0.88rem;
+    margin: 0 0 0.2rem;
+    color: var(--ink, #1A1714);
+}
+.cart-line-price {
+    font-size: 0.8rem;
+    margin: 0;
+    color: var(--warm-mid, #8a7f73);
+}
+.cart-line-qty {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+}
+.cart-line-qty button {
+    width: 22px;
+    height: 22px;
+    border: 1px solid rgba(26, 23, 20, 0.15);
+    background: transparent;
+    cursor: pointer;
+    line-height: 1;
+}
+.cart-line-remove {
+    background: none;
+    border: none;
+    color: #c0392b;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.cart-drawer-foot {
+    padding: 1.2rem 1.6rem 1.6rem;
+    border-top: 1px solid rgba(26, 23, 20, 0.08);
+}
+.cart-subtotal {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+    letter-spacing: 0.03em;
+}
+
+/* Sitewide search results dropdown (appended into .search-wrap by cart.js) */
+.search-dropdown {
+    position: absolute;
+    top: calc(100% + 0.6rem);
+    left: 0;
+    right: 0;
+    background: var(--cream, #F5F0E8);
+    border: 1px solid rgba(26, 23, 20, 0.1);
+    box-shadow: 0 16px 40px rgba(26, 23, 20, 0.12);
+    max-height: 360px;
+    overflow-y: auto;
+    z-index: 1010;
+    display: none;
+}
+.search-dropdown.open { display: block; }
+
+.search-dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.7rem 1rem;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(26, 23, 20, 0.06);
+    transition: background 0.15s;
+}
+.search-dropdown-item:last-child { border-bottom: none; }
+.search-dropdown-item:hover { background: var(--pale, #EDE8DF); }
+
+.search-dropdown-emoji { font-size: 1.4rem; flex-shrink: 0; }
+
+.search-dropdown-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+.search-dropdown-name {
+    font-size: 0.85rem;
+    color: var(--ink, #1A1714);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.search-dropdown-category {
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--warm-mid, #8B7355);
+}
+.search-dropdown-price {
+    font-size: 0.8rem;
+    color: var(--warm-mid, #8B7355);
+    flex-shrink: 0;
+}
+.search-dropdown-empty {
+    padding: 1rem;
+    font-size: 0.82rem;
+    color: var(--warm-mid, #8B7355);
+    text-align: center;
+}

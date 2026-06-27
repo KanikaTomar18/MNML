@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>New In — MNML</title>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&amp;family=DM+Sans:wght@300;400;500&amp;display=swap" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"/>
+    <link href="style.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="cart.css">
+    <style>
+        /* Active nav underline */
+        .nav-link-item.active { color: var(--ink) !important; text-decoration: underline; text-underline-offset: 4px; }
+    </style>
+</head>
+<body>
+
+    <!-- PROMO STRIP -->
+    <div class="promo-strip">Free shipping on orders over ₹2,500 · All India Delivery</div>
+
+    <nav class="navbar navbar-expand-lg">
+<div class="container">
+<a class="navbar-brand" href="index.html">MNML</a>
+<button class="navbar-toggler border-0" data-bs-target="#navMain" data-bs-toggle="collapse" type="button">
+<i class="bi bi-list" style="font-size:1.4rem;"></i>
+</button>
+<div class="collapse navbar-collapse" id="navMain">
+<ul class="navbar-nav mx-auto gap-4">
+<li class="nav-item"><a class="nav-link nav-link-item active" href="new-in.html" id="nav-new-in">New In</a></li>
+<li class="nav-item"><a class="nav-link nav-link-item" href="objects.html" id="nav-objects">Objects</a></li>
+<li class="nav-item"><a class="nav-link nav-link-item" href="living.html" id="nav-living">Living</a></li>
+<li class="nav-item"><a class="nav-link nav-link-item" href="archive.html" id="nav-archive">Archive</a></li>
+</ul>
+<div class="d-flex align-items-center gap-3">
+<div class="search-wrap d-none d-lg-block">
+<input id="searchInput" oninput="filterProducts()" placeholder="Search objects…" type="text"/>
+<i class="bi bi-search"></i>
+</div>
+<button class="cart-btn position-relative" onclick="openCart()">
+<i class="bi bi-bag"></i> Cart
+                        <span class="cart-count" id="cartCount">0</span>
+</button>
+</div>
+</div>
+</div>
+</nav>
+
+    <div class="page active" id="page-new-in">
+<section class="page-hero">
+<div class="container">
+<p class="breadcrumb-custom mb-3"><a href="index.html">Home</a> / <span>New In</span></p>
+<span class="eyebrow">Spring · Summer 2026</span>
+<h1>What's <em>New</em></h1>
+<p>The latest arrivals — considered additions to a life well-edited. Each piece selected for permanence, not trend.</p>
+</div>
+</section>
+<section class="py-5">
+<div class="container py-3">
+<div class="row g-4 mb-5">
+<div class="col-md-4"><div class="drop-card"><div class="drop-header"><h5>Drop 03 — Living</h5><span class="drop-date">Apr 2026</span></div><div class="product-img-wrap" style="font-size:4rem;">🕯️</div><div class="product-body"><p class="product-category">Just Landed</p><h3 class="product-name">Hiba Candle — Oud Edition</h3><p class="product-desc">Our signature beeswax candle now in a deep oud &amp; amber accord. Limited run of 200.</p><div class="mt-2 mb-3"><span class="tag tag-filled">New</span><span class="tag">Limited</span><span class="tag">Bestseller</span></div><div class="product-footer"><div class="product-price">₹1,150</div><button class="add-btn"><i class="bi bi-plus"></i></button></div></div></div></div>
+<div class="col-md-4"><div class="drop-card"><div class="drop-header"><h5>Drop 03 — Wellness</h5><span class="drop-date">Apr 2026</span></div><div class="product-img-wrap" style="font-size:4rem;">🌿</div><div class="product-body"><p class="product-category">Just Landed</p><h3 class="product-name">Cold Cream No. 4</h3><p class="product-desc">Whipped shea and calendula. No fragrance, no compromise.</p><div class="mt-2 mb-3"><span class="tag tag-filled">New</span><span class="tag">Vegan</span></div><div class="product-footer"><div class="product-price">₹980</div><button class="add-btn"><i class="bi bi-plus"></i></button></div></div></div></div>
+<div class="col-md-4"><div class="drop-card"><div class="drop-header" style="background:var(--warm-mid);"><h5>Drop 04 — Coming Soon</h5><span class="drop-date">May 2026</span></div><div class="product-img-wrap" style="font-size:4rem;opacity:0.4;">🪴</div><div class="product-body"><p class="product-category">Preview</p><h3 class="product-name" style="color:var(--warm-mid);">The Terra Collection</h3><p class="product-desc">Hand-thrown terracotta vessels and planters. Glazed in a single matte finish. Dropping May 12.</p><div class="mt-2 mb-3"><span class="tag">Preview</span><span class="tag">Sign Up</span></div><div class="product-footer"><div class="product-price" style="font-size:1rem;color:var(--warm-mid);">Notify Me</div><button class="add-btn" style="background:var(--warm-mid);"><i class="bi bi-bell"></i></button></div></div></div></div>
+</div>
+<div class="d-flex justify-content-between align-items-end mb-4" data-filter-type="category">
+<div><span class="section-eyebrow">All New Arrivals</span><h2 class="section-title">Latest Objects</h2></div>
+<div class="d-flex gap-2 flex-wrap" data-filter-type="category">
+<button class="filter-pill active" onclick="filterPill(this)">All</button>
+<button class="filter-pill" onclick="filterPill(this)">Living</button>
+<button class="filter-pill" onclick="filterPill(this)">Wellness</button>
+<button class="filter-pill" onclick="filterPill(this)">Kitchen</button>
+</div>
+</div>
+<div class="row g-4">
+<div class="col-lg-3 col-md-4 col-sm-6"><div class="product-card"><div class="product-img-wrap"><span class="product-badge">New</span>🫖</div><div class="product-body"><p class="product-category">Kitchen</p><div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div><h3 class="product-name">Ash Teapot</h3><p class="product-desc">Wheel-thrown in grey stoneware. Holds exactly two cups — by design.</p><div class="product-footer"><div class="product-price">₹2,400</div><button class="add-btn"><i class="bi bi-plus"></i></button></div></div></div></div>
+<div class="col-lg-3 col-md-4 col-sm-6"><div class="product-card"><div class="product-img-wrap"><span class="product-badge">New</span>🪞</div><div class="product-body"><p class="product-category">Living</p><div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star"></i></div><h3 class="product-name">Arch Mirror — Small</h3><p class="product-desc">Solid teak frame, hand-finished. 50 × 30cm arc form.</p><div class="product-footer"><div class="product-price">₹3,800</div><button class="add-btn"><i class="bi bi-plus"></i></button></div></div></div></div>
+<div class="col-lg-3 col-md-4 col-sm-6"><div class="product-card"><div class="product-img-wrap"><span class="product-badge">New</span>🧴</div><div class="product-body"><p class="product-category">Wellness</p><div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div><h3 class="product-name">Mineral Toner</h3><p class="product-desc">Rose water &amp; zinc. Balances, never strips. pH 5.5.</p><div class="product-footer"><div class="product-price">₹840</div><button class="add-btn"><i class="bi bi-plus"></i></button></div></div></div></div>
+<div class="col-lg-3 col-md-4 col-sm-6"><div class="product-card"><div class="product-img-wrap"><span class="product-badge">New</span>✏️</div><div class="product-body"><p class="product-category">Stationery</p><div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star"></i></div><h3 class="product-name">Graphite Pencil Set</h3><p class="product-desc">Six Japanese pencils, 2H–6B. Wrapped in washi paper.</p><div class="product-footer"><div class="product-price">₹460</div><button class="add-btn"><i class="bi bi-plus"></i></button></div></div></div></div>
+</div>
+</div>
+</section>
+</div>
+
+    <footer>
+<div class="container">
+<div class="row g-4">
+<div class="col-md-4">
+<span class="brand">MNML</span>
+<p style="font-size:0.82rem;line-height:1.7;max-width:280px;">Objects of considered design. We believe in buying less, but better.</p>
+</div>
+<div class="col-md-2 col-6">
+<h6>Shop</h6>
+<ul>
+<li><a href="new-in.html">New In</a></li>
+<li><a href="objects.html">Objects</a></li>
+<li><a href="living.html">Living</a></li>
+<li><a href="archive.html">Archive</a></li>
+</ul>
+</div>
+<div class="col-md-2 col-6">
+<h6>Help</h6>
+<ul>
+<li><a href="faq.html">FAQ</a></li>
+<li><a href="shipping.html">Shipping</a></li>
+<li><a href="returns.html">Returns</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</div>
+<div class="col-md-4">
+<h6>Stay in the loop</h6>
+<p style="font-size:0.8rem;margin-bottom:1rem;">New arrivals, slow reads, and restocks.</p>
+<div class="d-flex gap-2">
+<input class="newsletter-input" id="newsletterEmail" placeholder="your@email.com" style="flex:1;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.15);color:#F5F0E8;padding:0.55rem 0.9rem;font-size:0.8rem;font-family:'DM Sans',sans-serif;outline:none;" type="email"/>
+<button class="newsletter-submit" style="background:var(--accent);color:var(--ink);border:none;padding:0.55rem 1rem;font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;cursor:pointer;font-family:'DM Sans',sans-serif;">Join</button>
+</div>
+</div>
+</div>
+<div class="footer-bottom d-flex justify-content-between flex-wrap gap-2">
+<span>© 2026 MNML. All rights reserved.</span>
+<div class="d-flex gap-3">
+<a href="#" style="color:rgba(245,240,232,0.4);font-size:1rem;"><i class="bi bi-instagram"></i></a>
+<a href="#" style="color:rgba(245,240,232,0.4);font-size:1rem;"><i class="bi bi-pinterest"></i></a>
+<a href="#" style="color:rgba(245,240,232,0.4);font-size:1rem;"><i class="bi bi-twitter-x"></i></a>
+</div>
+</div>
+</div>
+</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="cart.js"></script>
+</body>
+</html>

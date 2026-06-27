@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact — MNML</title>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&amp;family=DM+Sans:wght@300;400;500&amp;display=swap" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"/>
+    <link href="style.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="cart.css">
+    <style>
+        /* Active nav underline */
+        .nav-link-item.active { color: var(--ink) !important; text-decoration: underline; text-underline-offset: 4px; }
+    </style>
+</head>
+<body>
+
+    <!-- PROMO STRIP -->
+    <div class="promo-strip">Free shipping on orders over ₹2,500 · All India Delivery</div>
+
+    <nav class="navbar navbar-expand-lg">
+<div class="container">
+<a class="navbar-brand" href="index.html">MNML</a>
+<button class="navbar-toggler border-0" data-bs-target="#navMain" data-bs-toggle="collapse" type="button">
+<i class="bi bi-list" style="font-size:1.4rem;"></i>
+</button>
+<div class="collapse navbar-collapse" id="navMain">
+<ul class="navbar-nav mx-auto gap-4">
+<li class="nav-item"><a class="nav-link nav-link-item" href="new-in.html" id="nav-new-in">New In</a></li>
+<li class="nav-item"><a class="nav-link nav-link-item" href="objects.html" id="nav-objects">Objects</a></li>
+<li class="nav-item"><a class="nav-link nav-link-item" href="living.html" id="nav-living">Living</a></li>
+<li class="nav-item"><a class="nav-link nav-link-item" href="archive.html" id="nav-archive">Archive</a></li>
+</ul>
+<div class="d-flex align-items-center gap-3">
+<div class="search-wrap d-none d-lg-block">
+<input id="searchInput" oninput="filterProducts()" placeholder="Search objects…" type="text"/>
+<i class="bi bi-search"></i>
+</div>
+<button class="cart-btn position-relative" onclick="openCart()">
+<i class="bi bi-bag"></i> Cart
+                        <span class="cart-count" id="cartCount">0</span>
+</button>
+</div>
+</div>
+</div>
+</nav>
+
+    <div class="page active" id="page-contact">
+<section class="page-hero">
+<div class="container">
+<p class="breadcrumb-custom mb-3"><a href="index.html">Home</a> / <span>Contact</span></p>
+<span class="eyebrow">Get in Touch</span>
+<h1>We'd Love to <em>Hear from You</em></h1>
+<p>A real person reads every message. We reply within one business day, usually faster.</p>
+</div>
+</section>
+<section class="py-5">
+<div class="container py-3">
+<div class="row g-5">
+<div class="col-lg-7">
+<span class="section-eyebrow">Send a Message</span>
+<h2 class="section-title mb-4">Write to Us</h2>
+<div class="row g-3">
+<div class="col-md-6"><label class="contact-label">First Name</label><input class="contact-input" id="contactFirstName" placeholder="Arjun" type="text"/></div>
+<div class="col-md-6"><label class="contact-label">Last Name</label><input class="contact-input" id="contactLastName" placeholder="Mehta" type="text"/></div>
+<div class="col-12"><label class="contact-label">Email Address</label><input class="contact-input" id="contactEmail" placeholder="arjun@example.com" type="email"/></div>
+<div class="col-md-6"><label class="contact-label">Order Number (if applicable)</label><input class="contact-input" id="contactOrderNumber" placeholder="MNML-001234" type="text"/></div>
+<div class="col-md-6"><label class="contact-label">Topic</label><select class="contact-input" id="contactTopic"><option disabled="" selected="" value="">Select a topic</option><option>Order enquiry</option><option>Return or exchange</option><option>Product question</option><option>Stockist enquiry</option><option>Press &amp; media</option><option>Other</option></select></div>
+<div class="col-12"><label class="contact-label">Your Message</label><textarea class="contact-input" id="contactMessage" placeholder="Tell us how we can help…" rows="5"></textarea></div>
+<div class="col-12"><button class="btn-dark-custom" onclick="submitContactForm(this)" style="width:100%;text-align:center;">Send Message</button><p style="font-size:0.75rem;color:var(--warm-mid);margin-top:0.8rem;letter-spacing:0.05em;">We'll reply to your email within 1 business day.</p></div>
+</div>
+</div>
+<div class="col-lg-5">
+<span class="section-eyebrow">Other Ways to Reach Us</span>
+<h2 class="section-title mb-4">Contact Info</h2>
+<div>
+<div class="contact-info-item"><div class="contact-info-icon">✉️</div><div class="contact-info-body"><h6>Email</h6><a href="mailto:hello@mnml.in">hello@mnml.in</a><a href="mailto:orders@mnml.in">orders@mnml.in</a><p>General · Orders &amp; support</p></div></div>
+<div class="contact-info-item"><div class="contact-info-icon">📞</div><div class="contact-info-body"><h6>Phone</h6><a href="tel:+918000000000">+91 80000 00000</a><p>Mon–Fri, 10AM–6PM IST</p></div></div>
+<div class="contact-info-item"><div class="contact-info-icon">📍</div><div class="contact-info-body"><h6>Studio &amp; Warehouse</h6><p>12B Mathuradas Mill Compound<br/>Lower Parel, Mumbai 400013<br/>Maharashtra, India</p><p style="margin-top:0.3rem;font-size:0.75rem;">Not open to the public</p></div></div>
+<div class="contact-info-item"><div class="contact-info-icon">🕐</div><div class="contact-info-body"><h6>Customer Support Hours</h6><p>Monday to Friday: 10AM – 6PM IST</p><p>Saturday: 11AM – 3PM IST</p><p>Sunday: Closed</p></div></div>
+</div>
+<div style="background:var(--ink);padding:1.8rem;margin-top:2rem;"><p style="font-size:0.68rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--accent);margin-bottom:0.6rem;">Follow Along</p><p style="font-size:0.85rem;color:rgba(245,240,232,0.6);line-height:1.7;margin-bottom:1.2rem;">Behind the scenes, new arrivals, and slow living — on Instagram.</p><a href="#" style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--cream);letter-spacing:0.1em;text-decoration:none;">@mnml.objects →</a></div>
+</div>
+</div>
+</div>
+</section>
+</div>
+
+    <footer>
+<div class="container">
+<div class="row g-4">
+<div class="col-md-4">
+<span class="brand">MNML</span>
+<p style="font-size:0.82rem;line-height:1.7;max-width:280px;">Objects of considered design. We believe in buying less, but better.</p>
+</div>
+<div class="col-md-2 col-6">
+<h6>Shop</h6>
+<ul>
+<li><a href="new-in.html">New In</a></li>
+<li><a href="objects.html">Objects</a></li>
+<li><a href="living.html">Living</a></li>
+<li><a href="archive.html">Archive</a></li>
+</ul>
+</div>
+<div class="col-md-2 col-6">
+<h6>Help</h6>
+<ul>
+<li><a href="faq.html">FAQ</a></li>
+<li><a href="shipping.html">Shipping</a></li>
+<li><a href="returns.html">Returns</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</div>
+<div class="col-md-4">
+<h6>Stay in the loop</h6>
+<p style="font-size:0.8rem;margin-bottom:1rem;">New arrivals, slow reads, and restocks.</p>
+<div class="d-flex gap-2">
+<input class="newsletter-input" id="newsletterEmail" placeholder="your@email.com" style="flex:1;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.15);color:#F5F0E8;padding:0.55rem 0.9rem;font-size:0.8rem;font-family:'DM Sans',sans-serif;outline:none;" type="email"/>
+<button class="newsletter-submit" style="background:var(--accent);color:var(--ink);border:none;padding:0.55rem 1rem;font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;cursor:pointer;font-family:'DM Sans',sans-serif;">Join</button>
+</div>
+</div>
+</div>
+<div class="footer-bottom d-flex justify-content-between flex-wrap gap-2">
+<span>© 2026 MNML. All rights reserved.</span>
+<div class="d-flex gap-3">
+<a href="#" style="color:rgba(245,240,232,0.4);font-size:1rem;"><i class="bi bi-instagram"></i></a>
+<a href="#" style="color:rgba(245,240,232,0.4);font-size:1rem;"><i class="bi bi-pinterest"></i></a>
+<a href="#" style="color:rgba(245,240,232,0.4);font-size:1rem;"><i class="bi bi-twitter-x"></i></a>
+</div>
+</div>
+</div>
+</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="cart.js"></script>
+</body>
+</html>

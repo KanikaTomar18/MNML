@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Archive — MNML</title>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&amp;family=DM+Sans:wght@300;400;500&amp;display=swap" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"/>
+    <link href="style.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="cart.css">
+    <style>
+        /* Active nav underline */
+        .nav-link-item.active { color: var(--ink) !important; text-decoration: underline; text-underline-offset: 4px; }
+    </style>
+</head>
+<body>
+
+    <!-- PROMO STRIP -->
+    <div class="promo-strip">Free shipping on orders over ₹2,500 · All India Delivery</div>
+
+    <nav class="navbar navbar-expand-lg">
+<div class="container">
+<a class="navbar-brand" href="index.html">MNML</a>
+<button class="navbar-toggler border-0" data-bs-target="#navMain" data-bs-toggle="collapse" type="button">
+<i class="bi bi-list" style="font-size:1.4rem;"></i>
+</button>
+<div class="collapse navbar-collapse" id="navMain">
+<ul class="navbar-nav mx-auto gap-4">
+<li class="nav-item"><a class="nav-link nav-link-item" href="new-in.html" id="nav-new-in">New In</a></li>
+<li class="nav-item"><a class="nav-link nav-link-item" href="objects.html" id="nav-objects">Objects</a></li>
+<li class="nav-item"><a class="nav-link nav-link-item" href="living.html" id="nav-living">Living</a></li>
+<li class="nav-item"><a class="nav-link nav-link-item active" href="archive.html" id="nav-archive">Archive</a></li>
+</ul>
+<div class="d-flex align-items-center gap-3">
+<div class="search-wrap d-none d-lg-block">
+<input id="searchInput" oninput="filterProducts()" placeholder="Search objects…" type="text"/>
+<i class="bi bi-search"></i>
+</div>
+<button class="cart-btn position-relative" onclick="openCart()">
+<i class="bi bi-bag"></i> Cart
+                        <span class="cart-count" id="cartCount">0</span>
+</button>
+</div>
+</div>
+</div>
+</nav>
+
+    <div class="page active" id="page-archive">
+<section class="page-hero">
+<div class="container">
+<p class="breadcrumb-custom mb-3"><a href="index.html">Home</a> / <span>Archive</span></p>
+<span class="eyebrow">Past Collections</span>
+<h1>The <em>Archive</em></h1>
+<p>Objects from previous collections. Some still available, most are gone. A record of what we've believed in.</p>
+</div>
+</section>
+<section class="py-5">
+<div class="container py-3">
+<div class="d-flex flex-wrap gap-2 mb-5" data-filter-type="year">
+<button class="filter-pill active" onclick="filterPill(this)">All Years</button>
+<button class="filter-pill" onclick="filterPill(this)">2025</button>
+<button class="filter-pill" onclick="filterPill(this)">2024</button>
+<button class="filter-pill" onclick="filterPill(this)">2023</button>
+<button class="filter-pill" onclick="filterPill(this)">Earlier</button>
+</div>
+<div class="mb-5" data-year="2025">
+<div class="d-flex align-items-center gap-3 mb-4"><span style="font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;color:var(--ink);">2025</span><div style="flex:1;height:1px;background:rgba(26,23,20,0.12);"></div><span style="font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--warm-mid);">Autumn — Winter</span></div>
+<div class="row g-3">
+<div class="col-lg-3 col-md-4 col-6"><div class="archive-item"><div class="archive-emoji-wrap">🫙</div><div class="archive-overlay"><div class="archive-overlay-text"><h4>Spice Jar Set</h4><p>AW 2025</p></div></div></div><div class="archive-meta"><h4>Spice Jar Set</h4><p>Set of three ceramic jars</p><span class="sold-tag">Sold Out</span></div></div>
+<div class="col-lg-3 col-md-4 col-6"><div class="archive-item"><div class="archive-emoji-wrap">🪔</div><div class="archive-overlay"><div class="archive-overlay-text"><h4>Diya Holder</h4><p>AW 2025</p></div></div></div><div class="archive-meta"><h4>Diya Holder — Brass</h4><p>Cast solid brass, limited 50</p><span class="sold-tag">Sold Out</span></div></div>
+<div class="col-lg-3 col-md-4 col-6"><div class="archive-item"><div class="archive-emoji-wrap" style="opacity:0.7;">📿</div><div class="archive-overlay"><div class="archive-overlay-text"><h4>Worry Beads</h4><p>AW 2025</p></div></div></div><div class="archive-meta"><h4>Olivewood Worry Beads</h4><p>Hand-knotted on linen cord</p><span style="display:inline-block;font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;padding:0.22rem 0.6rem;background:var(--accent);color:var(--ink);margin-top:0.35rem;">3 Left</span></div></div>
+<div class="col-lg-3 col-md-4 col-6"><div class="archive-item"><div class="archive-emoji-wrap">🕰️</div><div class="archive-overlay"><div class="archive-overlay-text"><h4>Table Clock</h4><p>AW 2025</p></div></div></div><div class="archive-meta"><h4>Brushed Brass Clock</h4><p>Silent sweep movement</p><span class="sold-tag">Sold Out</span></div></div>
+</div>
+</div>
+<div class="mb-5" data-year="2024">
+<div class="d-flex align-items-center gap-3 mb-4"><span style="font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;color:var(--warm-mid);">2024</span><div style="flex:1;height:1px;background:rgba(26,23,20,0.12);"></div><span style="font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--warm-mid);">Spring — Summer</span></div>
+<div class="row g-3">
+<div class="col-lg-3 col-md-4 col-6"><div class="archive-item"><div class="archive-emoji-wrap" style="opacity:0.55;">🧺</div><div class="archive-overlay"><div class="archive-overlay-text"><h4>Linen Storage Basket</h4><p>SS 2024</p></div></div></div><div class="archive-meta"><h4>Linen Storage Basket</h4><p>Hand-woven, undyed natural</p><span class="sold-tag">Sold Out</span></div></div>
+<div class="col-lg-3 col-md-4 col-6"><div class="archive-item"><div class="archive-emoji-wrap" style="opacity:0.55;">🪑</div><div class="archive-overlay"><div class="archive-overlay-text"><h4>Stool No. 1</h4><p>SS 2024</p></div></div></div><div class="archive-meta"><h4>Stool No. 1 — Teak</h4><p>A single-piece teak stool</p><span class="sold-tag">Sold Out</span></div></div>
+<div class="col-lg-3 col-md-4 col-6"><div class="archive-item"><div class="archive-emoji-wrap" style="opacity:0.55;">🍵</div><div class="archive-overlay"><div class="archive-overlay-text"><h4>Matcha Set</h4><p>SS 2024</p></div></div></div><div class="archive-meta"><h4>Matcha Ceremony Set</h4><p>Bowl, chasen &amp; chashaku</p><span class="sold-tag">Sold Out</span></div></div>
+<div class="col-lg-3 col-md-4 col-6"><div class="archive-item"><div class="archive-emoji-wrap" style="opacity:0.55;">🖋️</div><div class="archive-overlay"><div class="archive-overlay-text"><h4>Ink Set</h4><p>SS 2024</p></div></div></div><div class="archive-meta"><h4>Walnut Ink Set</h4><p>4 glass vials, iron-gall formula</p><span class="sold-tag">Sold Out</span></div></div>
+</div>
+</div>
+</div>
+</section>
+</div>
+
+    <footer>
+<div class="container">
+<div class="row g-4">
+<div class="col-md-4">
+<span class="brand">MNML</span>
+<p style="font-size:0.82rem;line-height:1.7;max-width:280px;">Objects of considered design. We believe in buying less, but better.</p>
+</div>
+<div class="col-md-2 col-6">
+<h6>Shop</h6>
+<ul>
+<li><a href="new-in.html">New In</a></li>
+<li><a href="objects.html">Objects</a></li>
+<li><a href="living.html">Living</a></li>
+<li><a href="archive.html">Archive</a></li>
+</ul>
+</div>
+<div class="col-md-2 col-6">
+<h6>Help</h6>
+<ul>
+<li><a href="faq.html">FAQ</a></li>
+<li><a href="shipping.html">Shipping</a></li>
+<li><a href="returns.html">Returns</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</div>
+<div class="col-md-4">
+<h6>Stay in the loop</h6>
+<p style="font-size:0.8rem;margin-bottom:1rem;">New arrivals, slow reads, and restocks.</p>
+<div class="d-flex gap-2">
+<input class="newsletter-input" id="newsletterEmail" placeholder="your@email.com" style="flex:1;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.15);color:#F5F0E8;padding:0.55rem 0.9rem;font-size:0.8rem;font-family:'DM Sans',sans-serif;outline:none;" type="email"/>
+<button class="newsletter-submit" style="background:var(--accent);color:var(--ink);border:none;padding:0.55rem 1rem;font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;cursor:pointer;font-family:'DM Sans',sans-serif;">Join</button>
+</div>
+</div>
+</div>
+<div class="footer-bottom d-flex justify-content-between flex-wrap gap-2">
+<span>© 2026 MNML. All rights reserved.</span>
+<div class="d-flex gap-3">
+<a href="#" style="color:rgba(245,240,232,0.4);font-size:1rem;"><i class="bi bi-instagram"></i></a>
+<a href="#" style="color:rgba(245,240,232,0.4);font-size:1rem;"><i class="bi bi-pinterest"></i></a>
+<a href="#" style="color:rgba(245,240,232,0.4);font-size:1rem;"><i class="bi bi-twitter-x"></i></a>
+</div>
+</div>
+</div>
+</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="cart.js"></script>
+</body>
+</html>

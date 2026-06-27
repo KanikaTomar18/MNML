@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FAQ — MNML</title>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&amp;family=DM+Sans:wght@300;400;500&amp;display=swap" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"/>
+    <link href="style.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="cart.css">
+    <style>
+        /* Active nav underline */
+        .nav-link-item.active { color: var(--ink) !important; text-decoration: underline; text-underline-offset: 4px; }
+    </style>
+</head>
+<body>
+
+    <!-- PROMO STRIP -->
+    <div class="promo-strip">Free shipping on orders over ₹2,500 · All India Delivery</div>
+
+    <nav class="navbar navbar-expand-lg">
+<div class="container">
+<a class="navbar-brand" href="index.html">MNML</a>
+<button class="navbar-toggler border-0" data-bs-target="#navMain" data-bs-toggle="collapse" type="button">
+<i class="bi bi-list" style="font-size:1.4rem;"></i>
+</button>
+<div class="collapse navbar-collapse" id="navMain">
+<ul class="navbar-nav mx-auto gap-4">
+<li class="nav-item"><a class="nav-link nav-link-item" href="new-in.html" id="nav-new-in">New In</a></li>
+<li class="nav-item"><a class="nav-link nav-link-item" href="objects.html" id="nav-objects">Objects</a></li>
+<li class="nav-item"><a class="nav-link nav-link-item" href="living.html" id="nav-living">Living</a></li>
+<li class="nav-item"><a class="nav-link nav-link-item" href="archive.html" id="nav-archive">Archive</a></li>
+</ul>
+<div class="d-flex align-items-center gap-3">
+<div class="search-wrap d-none d-lg-block">
+<input id="searchInput" oninput="filterProducts()" placeholder="Search objects…" type="text"/>
+<i class="bi bi-search"></i>
+</div>
+<button class="cart-btn position-relative" onclick="openCart()">
+<i class="bi bi-bag"></i> Cart
+                        <span class="cart-count" id="cartCount">0</span>
+</button>
+</div>
+</div>
+</div>
+</nav>
+
+    <div class="page active" id="page-faq">
+<section class="page-hero">
+<div class="container">
+<p class="breadcrumb-custom mb-3"><a href="index.html">Home</a> / <span>FAQ</span></p>
+<span class="eyebrow">Help Centre</span>
+<h1>Frequently Asked <em>Questions</em></h1>
+<p>If your question isn't answered here, write to us and we'll reply within one working day.</p>
+</div>
+</section>
+<section class="py-5">
+<div class="container py-3">
+<div class="row">
+<div class="col-lg-3 col-md-4 mb-4 mb-md-0">
+<div style="position:sticky;top:6rem;">
+<p style="font-size:0.68rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--warm-mid);margin-bottom:1rem;">Topics</p>
+<div class="faq-tabs" style="flex-direction:column;">
+<button class="faq-tab active text-start" onclick="filterFAQ('all',this)">All Questions</button>
+<button class="faq-tab text-start" onclick="filterFAQ('orders',this)">Orders &amp; Payment</button>
+<button class="faq-tab text-start" onclick="filterFAQ('shipping',this)">Shipping</button>
+<button class="faq-tab text-start" onclick="filterFAQ('returns',this)">Returns</button>
+<button class="faq-tab text-start" onclick="filterFAQ('products',this)">Products</button>
+</div>
+<div style="margin-top:2rem;padding:1.4rem;background:var(--pale);border:1px solid rgba(26,23,20,0.07);">
+<p style="font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);margin-bottom:0.5rem;">Still need help?</p>
+<p style="font-size:0.82rem;color:var(--warm-mid);line-height:1.6;margin-bottom:1rem;">Our team typically responds within 24 hours.</p>
+<button class="btn-dark-custom" onclick="location.href='contact.html'" style="width:100%;text-align:center;">Write to Us</button>
+</div>
+</div>
+</div>
+<div class="col-lg-9 col-md-8" id="faqList">
+<div class="faq-item" data-cat="orders"><button class="faq-question" onclick="toggleFAQ(this)">How do I place an order?<i class="bi bi-plus faq-icon"></i></button><div class="faq-answer"><p>Browse the collection, add items to your bag, and proceed to checkout. We accept all major debit/credit cards, UPI, and net banking. You'll receive an order confirmation email immediately after placing your order.</p></div></div>
+<div class="faq-item" data-cat="orders"><button class="faq-question" onclick="toggleFAQ(this)">Can I modify or cancel my order?<i class="bi bi-plus faq-icon"></i></button><div class="faq-answer"><p>Orders can be modified or cancelled within 2 hours of placement. After that, the order enters our packing process and can no longer be changed. Please email us at orders@mnml.in with your order number as soon as possible.</p></div></div>
+<div class="faq-item" data-cat="orders"><button class="faq-question" onclick="toggleFAQ(this)">What payment methods do you accept?<i class="bi bi-plus faq-icon"></i></button><div class="faq-answer"><p>We accept all major credit and debit cards (Visa, Mastercard, Amex), UPI, net banking, and wallets including Paytm and PhonePe. All payments are processed securely through Razorpay.</p></div></div>
+<div class="faq-item" data-cat="orders"><button class="faq-question" onclick="toggleFAQ(this)">Do you offer gift wrapping?<i class="bi bi-plus faq-icon"></i></button><div class="faq-answer"><p>Yes — complimentary gift wrapping is available for all orders above ₹1,500. We use recycled kraft paper, twine, and a dried botanical sprig. You can add a handwritten note at checkout at no extra charge.</p></div></div>
+<div class="faq-item" data-cat="shipping"><button class="faq-question" onclick="toggleFAQ(this)">How long does delivery take?<i class="bi bi-plus faq-icon"></i></button><div class="faq-answer"><p>Standard delivery takes 4–6 business days across India. Express shipping (2–3 business days) is available for an additional ₹200. Metro cities like Mumbai, Delhi, Bangalore, and Chennai often receive orders faster.</p></div></div>
+<div class="faq-item" data-cat="shipping"><button class="faq-question" onclick="toggleFAQ(this)">Do you ship internationally?<i class="bi bi-plus faq-icon"></i></button><div class="faq-answer"><p>Not yet — but we're working on it. We currently ship across all Indian states and union territories. International shipping is planned for late 2026. Sign up to our newsletter to be notified first.</p></div></div>
+<div class="faq-item" data-cat="shipping"><button class="faq-question" onclick="toggleFAQ(this)">Is shipping free?<i class="bi bi-plus faq-icon"></i></button><div class="faq-answer"><p>Standard shipping is free on all orders above ₹2,500. Below that, a flat ₹99 shipping charge applies. Express shipping is an additional ₹200 regardless of order value.</p></div></div>
+<div class="faq-item" data-cat="returns"><button class="faq-question" onclick="toggleFAQ(this)">What is your return policy?<i class="bi bi-plus faq-icon"></i></button><div class="faq-answer"><p>We offer a 30-day return window from the date of delivery. Items must be unused and in their original packaging. Certain items like candles (once lit) and personal wellness products are non-returnable for hygiene reasons.</p></div></div>
+<div class="faq-item" data-cat="returns"><button class="faq-question" onclick="toggleFAQ(this)">How do I initiate a return?<i class="bi bi-plus faq-icon"></i></button><div class="faq-answer"><p>Email orders@mnml.in with your order number and the item(s) you'd like to return. We'll arrange a free pickup within 2 business days. Refunds are processed within 5–7 business days of receiving the item.</p></div></div>
+<div class="faq-item" data-cat="products"><button class="faq-question" onclick="toggleFAQ(this)">Are your products sustainably made?<i class="bi bi-plus faq-icon"></i></button><div class="faq-answer"><p>Sustainability is central to how we operate. We source materials from certified suppliers, use recycled or minimal packaging, and partner only with small workshops that pay fair wages. Every product page lists where and how the item was made.</p></div></div>
+<div class="faq-item" data-cat="products"><button class="faq-question" onclick="toggleFAQ(this)">Do you restock sold-out items?<i class="bi bi-plus faq-icon"></i></button><div class="faq-answer"><p>Some items are limited editions and won't return. Core collection pieces are restocked every 8–12 weeks. You can click "Notify Me" on any sold-out product page to receive an email the moment it's back.</p></div></div>
+<div class="faq-item" data-cat="products"><button class="faq-question" onclick="toggleFAQ(this)">Are ceramics food-safe?<i class="bi bi-plus faq-icon"></i></button><div class="faq-answer"><p>Yes. All our ceramic tableware is fired at stoneware temperatures (1,200°C+) and glazed with food-safe, lead-free glazes. They are dishwasher-safe but we recommend hand-washing to preserve the glaze finish longer.</p></div></div>
+</div>
+</div>
+</div>
+</section>
+</div>
+
+    <footer>
+<div class="container">
+<div class="row g-4">
+<div class="col-md-4">
+<span class="brand">MNML</span>
+<p style="font-size:0.82rem;line-height:1.7;max-width:280px;">Objects of considered design. We believe in buying less, but better.</p>
+</div>
+<div class="col-md-2 col-6">
+<h6>Shop</h6>
+<ul>
+<li><a href="new-in.html">New In</a></li>
+<li><a href="objects.html">Objects</a></li>
+<li><a href="living.html">Living</a></li>
+<li><a href="archive.html">Archive</a></li>
+</ul>
+</div>
+<div class="col-md-2 col-6">
+<h6>Help</h6>
+<ul>
+<li><a href="faq.html">FAQ</a></li>
+<li><a href="shipping.html">Shipping</a></li>
+<li><a href="returns.html">Returns</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</div>
+<div class="col-md-4">
+<h6>Stay in the loop</h6>
+<p style="font-size:0.8rem;margin-bottom:1rem;">New arrivals, slow reads, and restocks.</p>
+<div class="d-flex gap-2">
+<input class="newsletter-input" id="newsletterEmail" placeholder="your@email.com" style="flex:1;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.15);color:#F5F0E8;padding:0.55rem 0.9rem;font-size:0.8rem;font-family:'DM Sans',sans-serif;outline:none;" type="email"/>
+<button class="newsletter-submit" style="background:var(--accent);color:var(--ink);border:none;padding:0.55rem 1rem;font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;cursor:pointer;font-family:'DM Sans',sans-serif;">Join</button>
+</div>
+</div>
+</div>
+<div class="footer-bottom d-flex justify-content-between flex-wrap gap-2">
+<span>© 2026 MNML. All rights reserved.</span>
+<div class="d-flex gap-3">
+<a href="#" style="color:rgba(245,240,232,0.4);font-size:1rem;"><i class="bi bi-instagram"></i></a>
+<a href="#" style="color:rgba(245,240,232,0.4);font-size:1rem;"><i class="bi bi-pinterest"></i></a>
+<a href="#" style="color:rgba(245,240,232,0.4);font-size:1rem;"><i class="bi bi-twitter-x"></i></a>
+</div>
+</div>
+</div>
+</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="cart.js"></script>
+</body>
+</html>

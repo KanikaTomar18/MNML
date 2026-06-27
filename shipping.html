@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shipping & Delivery — MNML</title>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&amp;family=DM+Sans:wght@300;400;500&amp;display=swap" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"/>
+    <link href="style.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="cart.css">
+    <style>
+        /* Active nav underline */
+        .nav-link-item.active { color: var(--ink) !important; text-decoration: underline; text-underline-offset: 4px; }
+    </style>
+</head>
+<body>
+
+    <!-- PROMO STRIP -->
+    <div class="promo-strip">Free shipping on orders over ₹2,500 · All India Delivery</div>
+
+    <nav class="navbar navbar-expand-lg">
+<div class="container">
+<a class="navbar-brand" href="index.html">MNML</a>
+<button class="navbar-toggler border-0" data-bs-target="#navMain" data-bs-toggle="collapse" type="button">
+<i class="bi bi-list" style="font-size:1.4rem;"></i>
+</button>
+<div class="collapse navbar-collapse" id="navMain">
+<ul class="navbar-nav mx-auto gap-4">
+<li class="nav-item"><a class="nav-link nav-link-item" href="new-in.html" id="nav-new-in">New In</a></li>
+<li class="nav-item"><a class="nav-link nav-link-item" href="objects.html" id="nav-objects">Objects</a></li>
+<li class="nav-item"><a class="nav-link nav-link-item" href="living.html" id="nav-living">Living</a></li>
+<li class="nav-item"><a class="nav-link nav-link-item" href="archive.html" id="nav-archive">Archive</a></li>
+</ul>
+<div class="d-flex align-items-center gap-3">
+<div class="search-wrap d-none d-lg-block">
+<input id="searchInput" oninput="filterProducts()" placeholder="Search objects…" type="text"/>
+<i class="bi bi-search"></i>
+</div>
+<button class="cart-btn position-relative" onclick="openCart()">
+<i class="bi bi-bag"></i> Cart
+                        <span class="cart-count" id="cartCount">0</span>
+</button>
+</div>
+</div>
+</div>
+</nav>
+
+    <div class="page active" id="page-shipping">
+<section class="page-hero">
+<div class="container">
+<p class="breadcrumb-custom mb-3"><a href="index.html">Home</a> / <span>Shipping</span></p>
+<span class="eyebrow">Delivery Information</span>
+<h1>Shipping &amp; <em>Delivery</em></h1>
+<p>Every order is packed by hand and dispatched within one business day. We ship across all of India.</p>
+</div>
+</section>
+<section class="py-5">
+<div class="container py-3">
+<div class="row mb-5"><div class="col-12"><span class="section-eyebrow">Rates &amp; Timelines</span><h2 class="section-title mb-4">Delivery Options</h2><div style="border:1px solid rgba(26,23,20,0.08);overflow:hidden;"><table class="ship-table"><thead style="background:var(--pale);"><tr><th>Service</th><th>Estimated Delivery</th><th>Cost</th><th>Notes</th></tr></thead><tbody><tr><td><strong style="font-weight:500;">Standard Shipping</strong><br/><span style="font-size:0.75rem;color:var(--warm-mid);">Delhivery / BlueDart</span></td><td>4–6 business days</td><td><span class="ship-badge ship-badge-free">Free</span> over ₹2,500<br/><span style="font-size:0.8rem;margin-top:0.3rem;display:block;">₹99 otherwise</span></td><td style="font-size:0.8rem;color:var(--warm-mid);">Tracking provided via SMS &amp; email</td></tr><tr><td><strong style="font-weight:500;">Express Shipping</strong><br/><span style="font-size:0.75rem;color:var(--warm-mid);">Delhivery Express</span></td><td>2–3 business days</td><td><span class="ship-badge ship-badge-fast">+₹200</span></td><td style="font-size:0.8rem;color:var(--warm-mid);">Available for metro cities only</td></tr><tr><td><strong style="font-weight:500;">Same-Day Delivery</strong><br/><span style="font-size:0.75rem;color:var(--warm-mid);">Mumbai only</span></td><td>Same day (order by 1PM)</td><td>₹350</td><td style="font-size:0.8rem;color:var(--warm-mid);">Mumbai city limits only · select products</td></tr><tr><td><strong style="font-weight:500;">International</strong></td><td>—</td><td>Unavailable</td><td style="font-size:0.8rem;color:var(--warm-mid);">Coming late 2026</td></tr></tbody></table></div></div></div>
+<div class="row g-5">
+<div class="col-md-6"><span class="section-eyebrow">Process</span><h2 class="section-title mb-4">How Your Order Travels</h2><div class="ship-step"><div class="ship-step-num">1</div><div class="ship-step-body"><h5>Order Confirmed</h5><p>You'll receive a confirmation email within minutes of placing your order. We review every order by hand before dispatching.</p></div></div><div class="ship-step"><div class="ship-step-num">2</div><div class="ship-step-body"><h5>Packed with Care</h5><p>Your items are wrapped in acid-free tissue, nestled in a kraft box, and sealed. Fragile items receive additional padding.</p></div></div><div class="ship-step"><div class="ship-step-num">3</div><div class="ship-step-body"><h5>Dispatched</h5><p>Orders placed before 2PM on weekdays ship the same day. You'll receive a tracking number via SMS and email.</p></div></div><div class="ship-step"><div class="ship-step-num">4</div><div class="ship-step-body"><h5>Delivered</h5><p>Our courier partners will attempt delivery twice. If missed, the package is held at a local facility for 5 days.</p></div></div></div>
+<div class="col-md-6"><span class="section-eyebrow">Good to Know</span><h2 class="section-title mb-4">Packaging &amp; Sustainability</h2><div style="background:var(--pale);padding:2rem;margin-bottom:1.5rem;"><div style="font-size:2rem;margin-bottom:0.8rem;">♻️</div><h5 style="font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:400;margin-bottom:0.5rem;">100% Recycled Outer Box</h5><p style="font-size:0.83rem;color:var(--warm-mid);line-height:1.7;">Our shipping boxes are made from post-consumer recycled cardboard. No plastic tape — we use paper tape with a water-activated adhesive.</p></div><div style="background:var(--pale);padding:2rem;margin-bottom:1.5rem;"><div style="font-size:2rem;margin-bottom:0.8rem;">🌿</div><h5 style="font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:400;margin-bottom:0.5rem;">No Plastic Filler</h5><p style="font-size:0.83rem;color:var(--warm-mid);line-height:1.7;">Fragile items are cushioned with shredded recycled paper or honeycomb kraft wrap — never bubble wrap or styrofoam pellets.</p></div><div style="background:var(--pale);padding:2rem;"><div style="font-size:2rem;margin-bottom:0.8rem;">📦</div><h5 style="font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:400;margin-bottom:0.5rem;">Right-Size Boxes</h5><p style="font-size:0.83rem;color:var(--warm-mid);line-height:1.7;">We use the smallest box that safely fits your order. Fewer emissions per shipment, less waste in your bin.</p></div></div>
+</div>
+</div>
+</section>
+</div>
+
+    <footer>
+<div class="container">
+<div class="row g-4">
+<div class="col-md-4">
+<span class="brand">MNML</span>
+<p style="font-size:0.82rem;line-height:1.7;max-width:280px;">Objects of considered design. We believe in buying less, but better.</p>
+</div>
+<div class="col-md-2 col-6">
+<h6>Shop</h6>
+<ul>
+<li><a href="new-in.html">New In</a></li>
+<li><a href="objects.html">Objects</a></li>
+<li><a href="living.html">Living</a></li>
+<li><a href="archive.html">Archive</a></li>
+</ul>
+</div>
+<div class="col-md-2 col-6">
+<h6>Help</h6>
+<ul>
+<li><a href="faq.html">FAQ</a></li>
+<li><a href="shipping.html">Shipping</a></li>
+<li><a href="returns.html">Returns</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</div>
+<div class="col-md-4">
+<h6>Stay in the loop</h6>
+<p style="font-size:0.8rem;margin-bottom:1rem;">New arrivals, slow reads, and restocks.</p>
+<div class="d-flex gap-2">
+<input class="newsletter-input" id="newsletterEmail" placeholder="your@email.com" style="flex:1;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.15);color:#F5F0E8;padding:0.55rem 0.9rem;font-size:0.8rem;font-family:'DM Sans',sans-serif;outline:none;" type="email"/>
+<button class="newsletter-submit" style="background:var(--accent);color:var(--ink);border:none;padding:0.55rem 1rem;font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;cursor:pointer;font-family:'DM Sans',sans-serif;">Join</button>
+</div>
+</div>
+</div>
+<div class="footer-bottom d-flex justify-content-between flex-wrap gap-2">
+<span>© 2026 MNML. All rights reserved.</span>
+<div class="d-flex gap-3">
+<a href="#" style="color:rgba(245,240,232,0.4);font-size:1rem;"><i class="bi bi-instagram"></i></a>
+<a href="#" style="color:rgba(245,240,232,0.4);font-size:1rem;"><i class="bi bi-pinterest"></i></a>
+<a href="#" style="color:rgba(245,240,232,0.4);font-size:1rem;"><i class="bi bi-twitter-x"></i></a>
+</div>
+</div>
+</div>
+</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="cart.js"></script>
+</body>
+</html>

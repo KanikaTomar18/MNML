@@ -1,0 +1,6 @@
+mnml.db
+__pycache__/
+*.pyc
+mnml.db
+.env
+venv/
