@@ -1,96 +1,316 @@
-# MNML — Backend
+# MNML – Minimalist E-commerce Website
 
-A small Flask + SQLite backend for the MNML site. It serves your existing
-static frontend (all the `.html`/`.css`/`.js` files, unchanged in spirit) and
-adds a handful of JSON endpoints so search, the contact form, the newsletter
-box, and checkout are no longer fake.
+A full-stack portfolio project demonstrating a minimalist e-commerce website built with **HTML, CSS, JavaScript, Flask, and SQLite**.
 
-## What changed in the frontend
+The application features a responsive multi-page storefront with a Flask backend that powers site-wide product search, contact form submissions, newsletter subscriptions, and checkout logging. The frontend remains lightweight and framework-free while communicating with a REST API.
 
-- **`cart.js`** — `filterProducts()` now does the same instant local filtering
-  as before, *plus* a debounced call to `/api/search` that shows a dropdown
-  of matches from every page (not just the one you're on). Also added:
-  newsletter submit handler, contact form submit handler, and a real
-  `checkoutDemo()` that logs the order to the backend and clears the cart.
-- **`cart.css`** — styles for the new search results dropdown.
-- **`contact.html`** — form fields got `id`s, and the submit button now calls
-  `submitContactForm(this)` instead of just faking a "Sent" state.
-- **All 9 pages** — the footer newsletter input/button got
-  `class="newsletter-input"` / `class="newsletter-submit"` so `cart.js` can
-  wire them up via event delegation (no other markup changes).
+---
 
-No visual changes — everything still looks and feels the same, it's just
-real now.
+## Features
 
-## Why search wasn't working
+### Frontend
 
-Each page only ever filtered the `.product-card` elements sitting *on that
-page*. Since `build.py` split the original single-page site into separate
-files, there was no shared product data — search a candle while on
-`living.html` and it'd never find products listed only on `objects.html`.
-The backend's `/api/search` fixes this by holding the full catalog in one
-SQLite table and searching across all of it.
+- Responsive multi-page website
+- Product catalog organized into:
+  - New In
+  - Objects
+  - Living
+  - Archive
+- Category and year filters
+- Shopping cart with quantity management
+- Cart persistence using `localStorage`
+- Site-wide search with instant filtering and backend-powered search suggestions
+- FAQ accordion
+- Contact page
+- Newsletter subscription
+- Checkout flow with order confirmation
 
-## Project structure
+### Backend
+
+- Flask REST API
+- SQLite database
+- Product catalog storage
+- Site-wide search endpoint
+- Contact form storage
+- Newsletter signup storage
+- Order logging
+- Health check endpoint
+
+---
+
+## Tech Stack
+
+### Frontend
+
+- HTML5
+- CSS3
+- JavaScript (ES6)
+- Bootstrap 5
+
+### Backend
+
+- Python
+- Flask
+- SQLite
+- Gunicorn
+
+### Deployment
+
+- Render
+
+---
+
+## Skills Demonstrated
+
+- Full-stack web development
+- REST API design
+- CRUD operations
+- SQLite database integration
+- Client-server communication using Fetch API
+- Debounced search implementation
+- Browser localStorage
+- Responsive UI development
+- Backend validation and server-side pricing
+- Deployment-ready Flask application
+
+---
+
+## Project Structure
 
 ```
-app.py              Flask app — routes, DB setup, seed data
-requirements.txt     Flask + gunicorn (intentionally minimal)
-Procfile             tells Render how to start the app
-.gitignore
-*.html, *.css, *.js  your existing frontend, served as static files
-build.py             unchanged — see note below
+MNML/
+│
+├── app.py
+├── build.py
+├── requirements.txt
+├── Procfile
+├── README.md
+├── .gitignore
+│
+├── index.html
+├── new-in.html
+├── objects.html
+├── living.html
+├── archive.html
+├── contact.html
+├── faq.html
+├── shipping.html
+├── returns.html
+│
+├── style.css
+├── cart.css
+├── cart.js
+│
+└── assets/  if you have any (image, logo)
 ```
 
-## Running locally
+---
+
+## Running Locally
+
+### Clone the repository
+
+```bash
+git clone https://github.com/yourusername/MNML.git
+
+cd MNML
+```
+
+### Install dependencies
 
 ```bash
 pip install -r requirements.txt
-python3 app.py
 ```
 
-Visit `http://localhost:5000`. The SQLite file `mnml.db` is created and
-seeded automatically on first run — delete it any time to reset to a clean
-catalog with no contact messages / signups / orders.
+### Start the application
 
-## API quick reference
+```bash
+python app.py
+```
 
-| Method | Path                  | Purpose                                   |
-|--------|-----------------------|--------------------------------------------|
-| GET    | `/api/products`       | catalog, optional `?category=` `&q=`      |
-| GET    | `/api/products/<id>`  | single product                             |
-| GET    | `/api/search?q=...`   | sitewide search (name/description/category)|
-| POST   | `/api/contact`        | store a contact form submission            |
-| POST   | `/api/newsletter`     | store an email signup                      |
-| POST   | `/api/orders`         | log a checkout (`{ "items": [...] }`)      |
-| GET    | `/api/orders/<id>`    | look up an order                           |
-| GET    | `/api/health`         | health check                               |
+Open your browser:
 
-## Deploying on Render
+```
+http://localhost:5000
+```
 
-1. Push this folder to a GitHub repo.
-2. On Render: **New → Web Service**, connect the repo.
-3. Runtime: Python 3. Build command: `pip install -r requirements.txt`.
-   Start command: `gunicorn app:app` (already set in the `Procfile`, Render
-   will pick it up automatically).
-4. Deploy. That's it — one service serves both the site and the API, same
-   origin, so there's no CORS config to worry about.
+On first launch the application automatically creates and seeds a SQLite database (`mnml.db`) with sample products.
 
-**Important caveat:** Render's free/standard web services have an *ephemeral*
-disk — `mnml.db` gets wiped on every redeploy or restart. For a portfolio
-demo that's usually fine (the catalog reseeds itself automatically), but any
-contact messages, newsletter signups, or orders logged in between deploys
-will be lost. If you want that data to persist, you'd need a Render
-[persistent disk](https://render.com/docs/disks) (small paid add-on) or to
-swap SQLite for Render's free Postgres later — not needed to ship this as-is,
-just worth knowing.
+Deleting `mnml.db` resets the application to its initial state.
 
-## A note on `build.py`
+---
 
-`build.py` regenerates these pages from a `source_index.html` that wasn't
-part of what I edited (it wasn't provided). The frontend changes above were
-made directly to the shipped `.html`/`.js`/`.css` files. If you still run
-`build.py` to regenerate pages from that source file, you'll overwrite these
-edits — so either port the same small changes into `source_index.html`, or
-(simplest) just treat the current `.html` files as the source of truth going
-forward, since the site's already fully split into pages.
+## How It Works
+
+### Shopping Cart
+
+The shopping cart is entirely client-side.
+
+- Products are stored in browser `localStorage`
+- Cart persists across page navigation
+- No login is required
+
+---
+
+### Search
+
+The search bar combines two approaches:
+
+#### Instant Client-side Search
+
+As the user types, products already visible on the current page are filtered immediately.
+
+#### Site-wide Backend Search
+
+After a short debounce delay (~250ms), the frontend requests:
+
+```
+GET /api/search?q=keyword
+```
+
+The backend searches the complete product catalog stored in SQLite and returns matching products from every page.
+
+---
+
+### Contact Form
+
+Submitting the contact form sends:
+
+```
+POST /api/contact
+```
+
+The message is stored in SQLite.
+
+---
+
+### Newsletter
+
+Newsletter subscriptions are sent to:
+
+```
+POST /api/newsletter
+```
+
+Email addresses are stored in SQLite.
+
+---
+
+### Checkout
+
+Checkout sends the shopping cart to:
+
+```
+POST /api/orders
+```
+
+The backend:
+
+- validates the request
+- recalculates prices using the database
+- creates an order
+- returns an order number
+
+The cart is then cleared from localStorage.
+
+---
+
+## API Reference
+
+| Method | Endpoint | Description |
+|---------|----------|-------------|
+| GET | `/api/products` | Get all products |
+| GET | `/api/products/<id>` | Get product by ID |
+| GET | `/api/search?q=` | Site-wide search |
+| POST | `/api/contact` | Submit contact form |
+| POST | `/api/newsletter` | Subscribe to newsletter |
+| POST | `/api/orders` | Create an order |
+| GET | `/api/orders/<id>` | Retrieve an order |
+| GET | `/api/health` | Health check |
+
+---
+
+## Deployment
+
+The application is deployment-ready for Render.
+
+### Build Command
+
+```bash
+pip install -r requirements.txt
+```
+
+### Start Command
+
+```bash
+gunicorn app:app
+```
+
+Because both the frontend and backend are served by Flask, no CORS configuration is required.
+
+---
+
+## Database
+
+The project uses SQLite.
+
+The database contains tables for:
+
+- Products
+- Orders
+- Contact Messages
+- Newsletter Subscribers
+
+The product catalog is automatically seeded on first startup.
+
+---
+
+## Known Limitations
+
+This project is intended as a portfolio demonstration.
+
+- No payment gateway integration
+- No authentication or user accounts
+- Cart is stored locally in the browser
+- No admin dashboard
+- Product images use placeholder emojis
+- SQLite data on Render's free tier is temporary and resets after redeployment
+
+---
+
+## Future Improvements
+
+Potential enhancements include:
+
+- User authentication
+- Order history
+- Stripe payment integration
+- Admin dashboard
+- Product image uploads
+- Product reviews
+- Wishlist functionality
+- PostgreSQL database
+- Docker support
+- CI/CD pipeline with GitHub Actions
+
+---
+
+## Screenshots
+<img width="1876" height="903" alt="image" src="https://github.com/user-attachments/assets/f3fa1599-eb3a-4ca9-b80f-20e0fddd2fcf" />
+<img width="530" height="917" alt="image" src="https://github.com/user-attachments/assets/dbc4ba66-8d6b-418f-b5b0-821c48e31627" />
+<img width="1912" height="900" alt="image" src="https://github.com/user-attachments/assets/376284b2-5457-46cc-a32f-40e437c99ea2" />
+
+---
+
+## Author
+
+**Kanika Tomar**
+
+- GitHub: https://github.com/KanikaTomar18
+- LinkedIn: https://www.linkedin.com/in/kanika-tomar-3a40a230a/
+
+---
+
+## License
+
+This project is intended for educational and portfolio purposes.
