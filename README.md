@@ -1,6 +1,6 @@
 # MNML – Minimalist E-commerce Website
 
-A full-stack portfolio project demonstrating a minimalist e-commerce website built with **HTML, CSS, JavaScript, Flask, and SQLite**.
+A full-stack project demonstrating a minimalist e-commerce website built with **HTML, CSS, JavaScript, Flask, and SQLite**.
 
 The application features a responsive multi-page storefront with a Flask backend that powers site-wide product search, contact form submissions, newsletter subscriptions, and checkout logging. The frontend remains lightweight and framework-free while communicating with a REST API.
 
