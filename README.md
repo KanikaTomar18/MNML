@@ -111,7 +111,7 @@ MNML/
 ### Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/MNML.git
+git clone https://github.com/KanikaTomar18/MNML.git
 
 cd MNML
 ```
